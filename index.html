@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubbles add or remove</title>
+</head>
+
+<body>
+    <ul id="parent">
+        <li class="child">List style-1</li>
+        <li class="child">List style-2</li>
+        <li class="child">List style-3</li>
+        <li class="child">List style-4</li>
+        <li class="child">List style-5</li>
+    </ul>
+    <button id="addnew">Add New Chiled</button>
+
+    <!-- <script>
+        //current list target by event:
+        var allchild = document.getElementsByClassName("child");
+            for (let i = 0; i < allchild.length; i++) {
+                const element = allchild[i];
+                element.addEventListener('click', function(event){
+                    console.log(this, event.target);
+                })
+            }
+    </script> -->
+    <!-- <script>
+        //inner text target by event:
+        var allchild = document.getElementsByClassName("child");
+        for (let i = 0; i < allchild.length; i++) {
+            const element = allchild[i];
+            element.addEventListener('click', function (event) {
+                console.log(event.target.innerText);
+            })
+        }
+    </script> -->
+    <!-- <script>
+        //Parent Node target by event:
+        var allchild = document.getElementsByClassName("child");
+        for (let i = 0; i < allchild.length; i++) {
+            const element = allchild[i];
+            element.addEventListener('click', function (event) {
+                console.log(event.target.parentNode);
+            })
+        }
+    </script> -->
+    <!-- <script>
+        //remove child in Parent Node by event:
+        var allchild = document.getElementsByClassName("child");
+        for (let i = 0; i < allchild.length; i++) {
+            const element = allchild[i];
+            element.addEventListener('click', function (event) {
+                event.target.parentNode.removeChild(event.target);
+            })
+        }
+    </script> -->
+    <script>
+        //remove child in Parent Node by event:
+        // document.getElementById("addnew").addEventListener('click', function(event){
+        //     var parentid = document.getElementById('parent');
+        //     var newitem = document.createElement('li');
+        //     newitem.innerText = 'New item added';
+        //     parentid.appendChild(newitem);
+        // })
+        // document.getElementById('addnew').addEventListener('click', function(event){
+        //     var newparent = document.getElementById('parent');
+        //     var newcel = document.createElement('li');
+        //     newcel.innerText = 'add new text';
+        //     newparent.appendChild(newcel);
+        // })
+        // document.getElementById('addnew').addEventListener('click', function(event){
+        //     var newvar = document.getElementById('parent');
+        //     var newcha = document.createElement('li');
+        //     newcha.innerText = 'good job man';
+        //     newvar.appendChild(newcha);
+        // })
+        document.getElementById("addnew").addEventListener('click', function(event){
+            var newvar = document.getElementById('parent');
+            var childli = document.createElement('li');
+            childli.innerText = 'This is child';
+            newvar.appendChild(childli);
+        })
+        // document.getElementById('parent').addEventListener('click', function(event){
+        //     event.target.parentNode.removeChild(event.target);
+        // })
+        document.getElementById("parent").addEventListener('click', function(event){
+            event.target.parentNode.removeChild(event.target);
+        })
+    </script>
+
+
+    <ul id="new-ul">
+        <li class="new-li">New List - 1</li>
+        <li class="new-li">New List - 2</li>
+        <li class="new-li">New List - 3</li>
+        <li class="new-li">New List - 4</li>
+        <li class="new-li">New List - 5</li>
+    </ul>
+    <button id="my-btn">Add New Button</button>
+    <script>
+        document.getElementById('my-btn').addEventListener('click', function(event){
+            var allul = document.getElementById('new-ul');
+            var allli = document.createElement('li');
+            allli.innerText = "New Child text";
+            allul.appendChild(allli);
+        })
+
+        document.getElementById('new-ul').addEventListener('click', function(event){
+            event.target.parentNode.removeChild(event.target);
+        })
+
+    </script>
+</body>
+
+</html>
